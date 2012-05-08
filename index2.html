@@ -1,37 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang='en'>
+	<head>
+		<title>Contao Developer Documentation</title>
+		<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+		<!--[if lt IE 9]><script type='text/javascript' src='assets/javascript/html5.js'></script><![endif]-->
+		<script type='text/javascript' src='assets/javascript/prettify.js'></script>
 
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Contao Developer Documentation : Developer documentation for the Contao Open Source CMS" />
-
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Contao Developer Documentation</title>
-  </head>
-
-  <body>
-
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/xchs/contao-docs">View on GitHub</a>
-
-          <h1 id="project_title">Contao Developer Documentation</h1>
-          <h2 id="project_tagline">Developer documentation for the Contao Open Source CMS</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/xchs/contao-docs/zipball/2.11">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/xchs/contao-docs/tarball/2.11">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
+		<link rel='stylesheet' type='text/css' href='assets/css/style.css' />
+		<link rel='stylesheet' type='text/css' href='assets/css/bootstrap.css' />
+		<link rel='stylesheet' type='text/css' href='assets/css/prettify.css' />
+	</head>
+	<body onload='prettyPrint()'>
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="#">Contao Developer Documentation</a>
+        <div class="nav-collapse">
+          <ul class="nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a><iframe src="http://markdotto.github.com/github-buttons/github-btn.html?user=xchs&repo=contao-docs&type=watch"allowtransparency="true" frameborder="0" scrolling="0" width="62px" height="20px"></iframe></a></li>
+            <li><a><iframe src="http://markdotto.github.com/github-buttons/github-btn.html?user=xchs&repo=contao-docs&type=fork"allowtransparency="true" frameborder="0" scrolling="0" width="62px" height="20px"></iframe></a></li>
+          </ul>
+        </div><!-- /.nav-collapse -->
+      </div>
+    </div><!-- /navbar-inner -->
+</div>
+		
+  <div class='row-fluid'>
+  		<div class='hero-unit'>
+			<header>
+				<h1 class=''>Contao Developer Documentation</h1>
+			</header>
+			<p>Developer documentation for the Contao Open Source CMS
+          <a href='https://github.com/xchs/contao-docs/zipball/2.11' class='btn btn-large'>
+            Download
+            <span>Latest version from GitHub</span>
+          </a>			</p>
+        <hr class="soften">
 
     <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h1>Contao hooks</h1>
+        <h2>Contao hooks</h2>
 
 <p>Hooks work similar to the callback functions of the Data Container Array. You can register one or more functions for a certain event and when the event is triggered, the callback functions are executed. Hooks allow you to add custom functionality to the core.</p>
 
@@ -96,18 +104,24 @@
 <li><a href="en/hooks/validateFormField.md">validateFormField</a></li>
 <li>updatePersonalData</li>
 </ul>
-      </section>
-    </div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Contao Developer Documentation maintained by <a href="https://github.com/xchs">xchs</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
+			
+      <span class="label label-important">How about a code example:</span>
+      <pre class='prettyprint'>
+// config.php
+$GLOBALS['TL_HOOKS']['getImage'][] = array('MyClass', 'myGetImage');
 
-    
+// MyClass.php
+public function myGetImage($image, $width, $height, $mode, $strCacheName, $objFile, $target)
+{
+    return MyImage::generateThumbnail($image, $widht, $height, $mode);
+}
+			</pre>
+		</div>	
+</div>
 
-  </body>
+		
+		<a href='https://github.com/xchs/contao-docs' class='github-ribbon'><img src='assets/images/github-ribbons/red.png' /></a>
+	</div>	
+	</body>
 </html>
